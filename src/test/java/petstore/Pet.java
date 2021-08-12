@@ -5,16 +5,16 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static io.restassured.RestAssured.authentication;
 import static io.restassured.RestAssured.given;
 
 // 2 - Bibliotecas
 // 3 - Classe
 public class Pet {
     //3.1 - Atributos
-    String uri = "https://petstore.swagger.io/v2/pet"; //endereço entidade PET
+    String uri = "https://petstore.swagger.io/v2/pet"; //endereço entidade Pet
 
     //3.2 - Métodos e Funções
     public String lerJson(String caminhoJson) throws IOException {
@@ -24,7 +24,7 @@ public class Pet {
     // Incluir - Create - Post
     @Test // Identifica o método ou função como um teste para o TestNG
     public void incluirPet() throws IOException{
-        String jsonBody = lerJson(caminhoJson: "db/pet1.json");
+        String jsonBody = lerJson("db/pet1.json");
 
         // Sintaxe Gherkin
         // Dado - Quando - Então
